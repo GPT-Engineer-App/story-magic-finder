@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink, Terminal, Zap } from 'lucide-react';
+import Navbar from '@/components/Navbar';
 
 const fetchTopStories = async () => {
   const response = await fetch('https://hn.algolia.com/api/v1/search?tags=front_page&hitsPerPage=100');
@@ -25,12 +26,14 @@ const Index = () => {
   ) || [];
 
   return (
-    <div className="container mx-auto p-4 bg-black text-green-400 min-h-screen">
-      <div className="flex items-center justify-center mb-6">
-        <Terminal className="w-8 h-8 mr-2" />
-        <h1 className="text-3xl font-bold">H4ck3r N3ws T0p 100</h1>
-        <Zap className="w-8 h-8 ml-2" />
-      </div>
+    <div className="bg-black text-green-400 min-h-screen">
+      <Navbar />
+      <div className="container mx-auto p-4">
+        <div className="flex items-center justify-center mb-6">
+          <Terminal className="w-8 h-8 mr-2" />
+          <h1 className="text-3xl font-bold">H4ck3r N3ws T0p 100</h1>
+          <Zap className="w-8 h-8 ml-2" />
+        </div>
       <div className="relative mb-4">
         <Input
           type="text"
