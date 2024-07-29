@@ -9,12 +9,17 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { User, Settings, LogOut } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   return (
     <nav className="bg-gray-900 p-4 flex justify-between items-center">
-      <div className="flex items-center">
+      <div className="flex items-center space-x-4">
         <h1 className="text-green-400 text-xl font-bold">H4ck3r N3ws</h1>
+        <Link to="/top" className="text-green-400 hover:text-green-300">Top</Link>
+        <Link to="/new" className="text-green-400 hover:text-green-300">New</Link>
+        <Link to="/ask" className="text-green-400 hover:text-green-300">Ask</Link>
+        <Link to="/show" className="text-green-400 hover:text-green-300">Show</Link>
       </div>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
